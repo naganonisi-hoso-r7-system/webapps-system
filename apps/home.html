@@ -81,7 +81,7 @@
                                     <font size="6">本ウェブアプリを使うにあたって</font>
                                 </h4>
                                 <div class="button_between"></div>
-                                <a href="https://webapp-system.github.io/stockn/useguide.html">
+                                <a href="https://naganonisi-hoso-r7-system.github.io/webapps-system/info/useguide.html">
                                     <div class="guide_box">
                                         <h2>
                                             <font size="7">使い方</font>
@@ -113,7 +113,7 @@
                                     </div>
                                 </a>
                                 <div class="button_between"></div>
-                                <a href="https://webapp-system.github.io/stockn/caution.html">
+                                <a href="https://naganonisi-hoso-r7-system.github.io/webapps-system /info/caution.html">
                                     <div class="caution_box">
                                         <h2>
                                             <font size="7">注意事項</font>
@@ -156,7 +156,7 @@
                                     <font size="6">その他</font>
                                 </h4>
                                 <div class="button_between"></div>
-                                <a href="https://webapp-system.github.io/stockn/info.html">
+                                <a href="https://naganonisi-hoso-r7-system.github.io/webapps-system /info/inquiry.html">
                                     <div class="info_box">
                                         <h2>
                                             <font size="7">お問い合わせ</font>
@@ -224,7 +224,7 @@
                         justify-content: center;
                         align-items: center;
                         z-index: 90;
-                        background-color: rgb(243, 239, 229);
+                        background-color: rgb(254, 252, 248);
                     }
 
                     .menu-btn span,
@@ -297,7 +297,7 @@
                         left: 100%;
                         /*leftの値を変更してメニューを画面外へ*/
                         z-index: 80;
-                        background-color: rgb(243, 239, 229);
+                        background-color: rgb(254, 252, 248);
                         transition: all 0.5s;
                         /*アニメーション設定*/
                         margin: 0;
@@ -412,13 +412,140 @@
                         data-hide="2025-07-05T13:22:59">
                         <h2>吹奏楽班</h2>
                     </div>
-                    <style>
-                        .groupname h2 {
-                            margin: 0px 0px 0px 15px;
-                            font-size: 45px;
-                            color: rgb(15, 162, 203);
+                </div>
+                <style>
+                    .groupname h2 {
+                        margin: 0px 0px 0px 15px;
+                        font-size: 45px;
+                        color: rgb(15, 162, 203);
+                    }
+                </style>
+                <script>
+                    (function () {
+                        // 全ての js-date-time-switching クラスを持つ要素を取得
+                        const jsDateTimeSwitching = document.querySelectorAll('.js-date-time-switching');
+
+                        // 日付の妥当性を確認する関数
+                        function isValidDate(date) {
+                            return date instanceof Date && !isNaN(date);
                         }
-                    </style>
+
+                        // 要素ごとに表示・非表示を制御する
+                        function updateDateTimeSwitchingVisibility() {
+                            const now = new Date(); // 現在の日時を取得
+
+                            jsDateTimeSwitching.forEach(element => {
+                                // データ属性から表示/非表示の日時を取得
+                                const showDateAttr = element.getAttribute('data-show');
+                                const hideDateAttr = element.getAttribute('data-hide');
+
+                                // 日時を変換
+                                const showDate = showDateAttr ? new Date(showDateAttr) : null;
+                                const hideDate = hideDateAttr ? new Date(hideDateAttr) : null;
+
+                                // 日時の妥当性を確認
+                                const isShowDateValid = !showDate || isValidDate(showDate);
+                                const isHideDateValid = !hideDate || isValidDate(hideDate);
+
+                                // 日時が無効であれば非表示に設定
+                                if (!isShowDateValid || !isHideDateValid) {
+                                    return; // 無効な要素はスキップ
+                                }
+
+                                // 現在の日時との比較
+                                let shouldDisplay = true; // デフォルトでは表示
+
+                                if (showDate && now < showDate) {
+                                    // `data-show` が存在し、現在日時が指定日時より前なら非表示
+                                    shouldDisplay = false;
+                                }
+                                if (hideDate && now > hideDate) {
+                                    // `data-hide` が存在し、現在日時が指定日時を過ぎていれば非表示
+                                    shouldDisplay = false;
+                                }
+
+                                // 表示・非表示を制御
+                                element.style.display = shouldDisplay ? 'block' : 'none';
+                            });
+                        }
+
+                        // 初期状態で実行
+                        updateDateTimeSwitchingVisibility();
+
+                        // 1秒ごとにチェックして更新
+                        setInterval(updateDateTimeSwitchingVisibility, 1000);
+                    })();
+                </script>
+            </div>
+            <style>
+                .scheduleguide {
+                    background-color: rgb(189, 229, 240);
+                    height: 100px;
+                }
+            </style>
+            <style>
+                .group {
+                    display: flex;
+                }
+            </style>
+        </div>
+        <div class="scheduleline01">
+            <style>
+                .scheduleline01 {
+                    background-color: rgb(38, 181, 221);
+                    width: 100%;
+                    height: 2px;
+                }
+            </style>
+        </div>
+        <div class="scheduleinfo">
+            <div class="scheduletimeblock">
+                <p>開始時刻:</p>
+                <div class="scheduletime">
+                    <div class="dateTimeSwitching js-date-time-switching" data-show="2025-01-01T00:00:00"
+                        data-hide="2025-06-30T23:59:59">
+                        <h2>本日の一般公開は10:00~です。</h2>
+                    </div>
+                    <div class="dateTimeSwitching js-date-time-switching" data-show="2025-07-01T00:00:00"
+                        data-hide="2025-07-04T23:59:59">
+                        <h2>本日のイベントはありません。</h2>
+                    </div>
+                    <div class="dateTimeSwitching js-date-time-switching" data-show="2025-07-05T00:00:00"
+                        data-hide="2025-07-05T09:59:59">
+                        <h2>本日の一般公開は10:00~です。</h2>
+                    </div>
+                    <div class="dateTimeSwitching js-date-time-switching" data-show="2025-07-05T10:00:00"
+                        data-hide="2025-07-05T10:47:59">
+                        <h2>書道班　Ｐａｒｔ１</h2>
+                    </div>
+                    <div class="dateTimeSwitching js-date-time-switching" data-show="2025-07-05T10:48:00"
+                        data-hide="2025-07-05T11:02:59">
+                        <h2>ライフスタイル班</h2>
+                    </div>
+                    <div class="dateTimeSwitching js-date-time-switching" data-show="2025-07-05T11:03:00"
+                        data-hide="2025-07-05T11:27:59">
+                        <h2>合唱班</h2>
+                    </div>
+                    <div class="dateTimeSwitching js-date-time-switching" data-show="2025-07-05T11:28:00"
+                        data-hide="2025-07-05T11:57:59">
+                        <h2>邦楽班</h2>
+                    </div>
+                    <div class="dateTimeSwitching js-date-time-switching" data-show="2025-07-05T11:58:00"
+                        data-hide="2025-07-05T12:20:59">
+                        <h2>バトン班</h2>
+                    </div>
+                    <div class="dateTimeSwitching js-date-time-switching" data-show="2025-07-05T12:21:00"
+                        data-hide="2025-07-05T12:37:59">
+                        <h2>休憩中</h2>
+                    </div>
+                    <div class="dateTimeSwitching js-date-time-switching" data-show="2025-07-05T12:38:00"
+                        data-hide="2025-07-05T12:57:59">
+                        <h2>書道班　Ｐａｒｔ２</h2>
+                    </div>
+                    <div class="dateTimeSwitching js-date-time-switching" data-show="2025-07-05T12:58:00"
+                        data-hide="2025-07-05T13:22:59">
+                        <h2>吹奏楽班</h2>
+                    </div>
                     <script>
                         (function () {
                             // 全ての js-date-time-switching クラスを持つ要素を取得
@@ -477,496 +604,381 @@
                     </script>
                 </div>
                 <style>
-                    .scheduleguide {
+                    .scheduletimeblock {
                         background-color: rgb(189, 229, 240);
-                        height: 100px;
-                    }
-                </style>
-                <style>
-                    .group {
                         display: flex;
+                        width: 60%;
+                    }
+
+                    .scheduletimeblock p {
+                        color: rgb(15, 162, 203);
+                        margin: 17px 0px 0px 15px;
+                    }
+
+                    .scheduletimeblock h2 {
+                        color: rgb(15, 162, 203);
+                        font-size: 30px;
+                        margin: 0px 0px 5px 0px;
                     }
                 </style>
             </div>
-            <div class="scheduleline01">
-                <style>
-                    .scheduleline01 {
-                        background-color: rgb(38, 181, 221);
-                        width: 100%;
-                        height: 2px;
-                    }
-                </style>
-            </div>
-            <div class="scheduleinfo">
-                <div class="scheduletimeblock">
-                    <p>開始時刻:</p>
-                    <div class="scheduletime">
-                        <div class="dateTimeSwitching js-date-time-switching" data-show="2025-01-01T00:00:00"
-                            data-hide="2025-06-30T23:59:59">
-                            <h2>本日の一般公開は10:00~です。</h2>
-                        </div>
-                        <div class="dateTimeSwitching js-date-time-switching" data-show="2025-07-01T00:00:00"
-                            data-hide="2025-07-04T23:59:59">
-                            <h2>本日のイベントはありません。</h2>
-                        </div>
-                        <div class="dateTimeSwitching js-date-time-switching" data-show="2025-07-05T00:00:00"
-                            data-hide="2025-07-05T09:59:59">
-                            <h2>本日の一般公開は10:00~です。</h2>
-                        </div>
-                        <div class="dateTimeSwitching js-date-time-switching" data-show="2025-07-05T10:00:00"
-                            data-hide="2025-07-05T10:47:59">
-                            <h2>書道班　Ｐａｒｔ１</h2>
-                        </div>
-                        <div class="dateTimeSwitching js-date-time-switching" data-show="2025-07-05T10:48:00"
-                            data-hide="2025-07-05T11:02:59">
-                            <h2>ライフスタイル班</h2>
-                        </div>
-                        <div class="dateTimeSwitching js-date-time-switching" data-show="2025-07-05T11:03:00"
-                            data-hide="2025-07-05T11:27:59">
-                            <h2>合唱班</h2>
-                        </div>
-                        <div class="dateTimeSwitching js-date-time-switching" data-show="2025-07-05T11:28:00"
-                            data-hide="2025-07-05T11:57:59">
-                            <h2>邦楽班</h2>
-                        </div>
-                        <div class="dateTimeSwitching js-date-time-switching" data-show="2025-07-05T11:58:00"
-                            data-hide="2025-07-05T12:20:59">
-                            <h2>バトン班</h2>
-                        </div>
-                        <div class="dateTimeSwitching js-date-time-switching" data-show="2025-07-05T12:21:00"
-                            data-hide="2025-07-05T12:37:59">
-                            <h2>休憩中</h2>
-                        </div>
-                        <div class="dateTimeSwitching js-date-time-switching" data-show="2025-07-05T12:38:00"
-                            data-hide="2025-07-05T12:57:59">
-                            <h2>書道班　Ｐａｒｔ２</h2>
-                        </div>
-                        <div class="dateTimeSwitching js-date-time-switching" data-show="2025-07-05T12:58:00"
-                            data-hide="2025-07-05T13:22:59">
-                            <h2>吹奏楽班</h2>
-                        </div>
-                        <script>
-                            (function () {
-                                // 全ての js-date-time-switching クラスを持つ要素を取得
-                                const jsDateTimeSwitching = document.querySelectorAll('.js-date-time-switching');
+            <div class="scheduleplaceblock">
+                <p>場所:</p>
+                <div class="scheduleplace">
+                    <h2>第二体育館</h2>
+                    <script>
+                        (function () {
+                            // 全ての js-date-time-switching クラスを持つ要素を取得
+                            const jsDateTimeSwitching = document.querySelectorAll('.js-date-time-switching');
 
-                                // 日付の妥当性を確認する関数
-                                function isValidDate(date) {
-                                    return date instanceof Date && !isNaN(date);
-                                }
+                            // 日付の妥当性を確認する関数
+                            function isValidDate(date) {
+                                return date instanceof Date && !isNaN(date);
+                            }
 
-                                // 要素ごとに表示・非表示を制御する
-                                function updateDateTimeSwitchingVisibility() {
-                                    const now = new Date(); // 現在の日時を取得
+                            // 要素ごとに表示・非表示を制御する
+                            function updateDateTimeSwitchingVisibility() {
+                                const now = new Date(); // 現在の日時を取得
 
-                                    jsDateTimeSwitching.forEach(element => {
-                                        // データ属性から表示/非表示の日時を取得
-                                        const showDateAttr = element.getAttribute('data-show');
-                                        const hideDateAttr = element.getAttribute('data-hide');
+                                jsDateTimeSwitching.forEach(element => {
+                                    // データ属性から表示/非表示の日時を取得
+                                    const showDateAttr = element.getAttribute('data-show');
+                                    const hideDateAttr = element.getAttribute('data-hide');
 
-                                        // 日時を変換
-                                        const showDate = showDateAttr ? new Date(showDateAttr) : null;
-                                        const hideDate = hideDateAttr ? new Date(hideDateAttr) : null;
+                                    // 日時を変換
+                                    const showDate = showDateAttr ? new Date(showDateAttr) : null;
+                                    const hideDate = hideDateAttr ? new Date(hideDateAttr) : null;
 
-                                        // 日時の妥当性を確認
-                                        const isShowDateValid = !showDate || isValidDate(showDate);
-                                        const isHideDateValid = !hideDate || isValidDate(hideDate);
+                                    // 日時の妥当性を確認
+                                    const isShowDateValid = !showDate || isValidDate(showDate);
+                                    const isHideDateValid = !hideDate || isValidDate(hideDate);
 
-                                        // 日時が無効であれば非表示に設定
-                                        if (!isShowDateValid || !isHideDateValid) {
-                                            return; // 無効な要素はスキップ
-                                        }
+                                    // 日時が無効であれば非表示に設定
+                                    if (!isShowDateValid || !isHideDateValid) {
+                                        return; // 無効な要素はスキップ
+                                    }
 
-                                        // 現在の日時との比較
-                                        let shouldDisplay = true; // デフォルトでは表示
+                                    // 現在の日時との比較
+                                    let shouldDisplay = true; // デフォルトでは表示
 
-                                        if (showDate && now < showDate) {
-                                            // `data-show` が存在し、現在日時が指定日時より前なら非表示
-                                            shouldDisplay = false;
-                                        }
-                                        if (hideDate && now > hideDate) {
-                                            // `data-hide` が存在し、現在日時が指定日時を過ぎていれば非表示
-                                            shouldDisplay = false;
-                                        }
+                                    if (showDate && now < showDate) {
+                                        // `data-show` が存在し、現在日時が指定日時より前なら非表示
+                                        shouldDisplay = false;
+                                    }
+                                    if (hideDate && now > hideDate) {
+                                        // `data-hide` が存在し、現在日時が指定日時を過ぎていれば非表示
+                                        shouldDisplay = false;
+                                    }
 
-                                        // 表示・非表示を制御
-                                        element.style.display = shouldDisplay ? 'block' : 'none';
-                                    });
-                                }
+                                    // 表示・非表示を制御
+                                    element.style.display = shouldDisplay ? 'block' : 'none';
+                                });
+                            }
 
-                                // 初期状態で実行
-                                updateDateTimeSwitchingVisibility();
+                            // 初期状態で実行
+                            updateDateTimeSwitchingVisibility();
 
-                                // 1秒ごとにチェックして更新
-                                setInterval(updateDateTimeSwitchingVisibility, 1000);
-                            })();
-                        </script>
-                    </div>
-                    <style>
-                        .scheduletimeblock {
-                            background-color: rgb(189, 229, 240);
-                            display: flex;
-                            width: 60%;
-                        }
-
-                        .scheduletimeblock p {
-                            color: rgb(15, 162, 203);
-                            margin: 17px 0px 0px 15px;
-                        }
-
-                        .scheduletimeblock h2 {
-                            color: rgb(15, 162, 203);
-                            font-size: 30px;
-                            margin: 0px 0px 5px 0px;
-                        }
-                    </style>
-                </div>
-                <div class="scheduleplaceblock">
-                    <p>場所:</p>
-                    <div class="scheduleplace">
-                        <h2>第二体育館</h2>
-                        <script>
-                            (function () {
-                                // 全ての js-date-time-switching クラスを持つ要素を取得
-                                const jsDateTimeSwitching = document.querySelectorAll('.js-date-time-switching');
-
-                                // 日付の妥当性を確認する関数
-                                function isValidDate(date) {
-                                    return date instanceof Date && !isNaN(date);
-                                }
-
-                                // 要素ごとに表示・非表示を制御する
-                                function updateDateTimeSwitchingVisibility() {
-                                    const now = new Date(); // 現在の日時を取得
-
-                                    jsDateTimeSwitching.forEach(element => {
-                                        // データ属性から表示/非表示の日時を取得
-                                        const showDateAttr = element.getAttribute('data-show');
-                                        const hideDateAttr = element.getAttribute('data-hide');
-
-                                        // 日時を変換
-                                        const showDate = showDateAttr ? new Date(showDateAttr) : null;
-                                        const hideDate = hideDateAttr ? new Date(hideDateAttr) : null;
-
-                                        // 日時の妥当性を確認
-                                        const isShowDateValid = !showDate || isValidDate(showDate);
-                                        const isHideDateValid = !hideDate || isValidDate(hideDate);
-
-                                        // 日時が無効であれば非表示に設定
-                                        if (!isShowDateValid || !isHideDateValid) {
-                                            return; // 無効な要素はスキップ
-                                        }
-
-                                        // 現在の日時との比較
-                                        let shouldDisplay = true; // デフォルトでは表示
-
-                                        if (showDate && now < showDate) {
-                                            // `data-show` が存在し、現在日時が指定日時より前なら非表示
-                                            shouldDisplay = false;
-                                        }
-                                        if (hideDate && now > hideDate) {
-                                            // `data-hide` が存在し、現在日時が指定日時を過ぎていれば非表示
-                                            shouldDisplay = false;
-                                        }
-
-                                        // 表示・非表示を制御
-                                        element.style.display = shouldDisplay ? 'block' : 'none';
-                                    });
-                                }
-
-                                // 初期状態で実行
-                                updateDateTimeSwitchingVisibility();
-
-                                // 1秒ごとにチェックして更新
-                                setInterval(updateDateTimeSwitchingVisibility, 1000);
-                            })();
-                        </script>
-                    </div>
-                    <style>
-                        .scheduleplaceblock {
-                            background-color: rgb(189, 229, 240);
-                            display: flex;
-                            width: 40%;
-                        }
-
-                        .scheduleplaceblock p {
-                            color: rgb(15, 162, 203);
-                            margin: 17px 0px 0px 15px;
-                        }
-
-                        .scheduleplaceblock h2 {
-                            color: rgb(15, 162, 203);
-                            font-size: 30px;
-                            margin: 0px 0px 5px 0px;
-                        }
-                    </style>
+                            // 1秒ごとにチェックして更新
+                            setInterval(updateDateTimeSwitchingVisibility, 1000);
+                        })();
+                    </script>
                 </div>
                 <style>
-                    .scheduleinfo {
+                    .scheduleplaceblock {
+                        background-color: rgb(189, 229, 240);
                         display: flex;
-                        width: 100%;
+                        width: 40%;
+                    }
+
+                    .scheduleplaceblock p {
+                        color: rgb(15, 162, 203);
+                        margin: 17px 0px 0px 15px;
+                    }
+
+                    .scheduleplaceblock h2 {
+                        color: rgb(15, 162, 203);
+                        font-size: 30px;
+                        margin: 0px 0px 5px 0px;
                     }
                 </style>
             </div>
-
-            <div class="featurelist">
-                <div class="featurelist_item">
-                    <a href="sales_status.html">
-                        <img src="img/home_stock.png" alt="在庫状況">
-                    </a>
-                </div>
-                <div class="featurelist_item">
-                    <a href="classCM.html">
-                        <img src="img/home_classCM.png" alt="クラスCM">
-                    </a>
-                </div>
-                <div class="featurelist_item">
-                    <a href="schedule.html">
-                        <img src="img/home_schedule.png" alt="スケジュール">
-                    </a>
-                </div>
-            </div>
-
             <style>
-                .featurelist {
+                .scheduleinfo {
                     display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    gap: 30px;
-                    margin: 30px auto;
-                    height: 200px;
-                }
-
-                .featurelist_item {
-                    text-align: center;
-                }
-
-                .featurelist_item img {
-                    height: 180px;
-                    display: block;
-                    margin: 0 auto;
+                    width: 100%;
                 }
             </style>
+        </div>
+
+        <div class="featurelist">
+            <div class="featurelist_item">
+                <a href="sales_status.html">
+                    <img src="img/home_stock.png" alt="在庫状況">
+                </a>
+            </div>
+            <div class="featurelist_item">
+                <a href="classCM.html">
+                    <img src="img/home_classCM.png" alt="クラスCM">
+                </a>
+            </div>
+            <div class="featurelist_item">
+                <a href="schedule.html">
+                    <img src="img/home_schedule.png" alt="スケジュール">
+                </a>
+            </div>
+        </div>
+
+        <style>
+            .featurelist {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 30px;
+                margin: 30px auto;
+                height: 200px;
+            }
+
+            .featurelist_item {
+                text-align: center;
+            }
+
+            .featurelist_item img {
+                height: 180px;
+                display: block;
+                margin: 0 auto;
+            }
+        </style>
 
 
-            <div class="info">
-                <div class="infotitel">
-                    <h1>お知らせ</h1>
-                    <div class="infoline">
+        <div class="info">
+            <div class="infotitel">
+                <h1>お知らせ</h1>
+                <div class="infoline">
+                    <style>
+                        .infoline {
+                            background-color: rgb(38, 181, 221);
+                            height: 4px;
+                        }
+                    </style>
+                </div>
+                <style>
+                    .infotitel h1 {
+                        color: rgb(38, 181, 221);
+                        font-size: 35px;
+                        margin: 0px 0px 0px 15px;
+                    }
+
+                    .infotitel {
+                        margin: 0px;
+                    }
+                </style>
+            </div>
+            <div class="infobody">
+                <div class="infoblock">
+                    <div class="notinfo">
+                        <p>現在お知らせはございません。</p>
                         <style>
-                            .infoline {
-                                background-color: rgb(38, 181, 221);
-                                height: 4px;
+                            .notinfo p {
+                                margin: auto;
                             }
                         </style>
                     </div>
                     <style>
-                        .infotitel h1 {
-                            color: rgb(38, 181, 221);
-                            font-size: 35px;
-                            margin: 0px 0px 0px 15px;
-                        }
-
-                        .infotitel {
+                        .infoblock {
+                            height: 180px;
                             margin: 0px;
                         }
                     </style>
                 </div>
-                <div class="infobody">
-                    <div class="infoblock">
-                        <div class="notinfo">
-                            <p>現在お知らせはございません。</p>
-                            <style>
-                                .notinfo p {
-                                    margin: auto;
+                <div class="infoend">
+                    <a href="notice.html">
+                        <div class="guide_privacy">
+                            <h1>お知らせ一覧はこちら</h1>
+                            <style text="type/css">
+                                .guide_privacy {
+                                    border-radius: 5px;
+                                    border-color: rgb(156, 153, 151);
+                                    border-width: 3px;
+                                    border-style: solid;
+                                    margin: 0px auto 0px auto;
+                                    text-align: center;
+                                    width: 40%;
+                                }
+
+                                .guide_privacy h1 {
+                                    color: rgb(156, 153, 151);
+                                    font-size: 20px;
+                                    margin: 0px;
                                 }
                             </style>
                         </div>
-                        <style>
-                            .infoblock {
-                                height: 180px;
-                                margin: 0px;
-                            }
-                        </style>
-                    </div>
-                    <div class="infoend">
-                        <a href="https://webapp-system.github.io/stockn/privacy.html">
-                            <div class="guide_privacy">
-                                <h1>お知らせ一覧はこちら</h1>
+                    </a>
+                    <style text="type/css">
+                        .infoend a {
+                            text-decoration: none;
+                        }
+
+                        .infoend {
+                            margin: 0px;
+                            height: 40px;
+                        }
+                    </style>
+                </div>
+                <style>
+                    .infobody {
+                        background-color: rgb(215, 215, 215);
+                    }
+                </style>
+            </div>
+
+            <div class="pageend">
+                <style type="text/css">
+                    .pageend {
+                        margin: auto;
+                        width: 100%;
+                        height: 320px;
+                    }
+                </style>
+            </div>
+
+
+            <footer>
+                <div class="reload">
+                    <a href="home.html"><img src="img/reload.png" class="img-reload"></a>
+                </div>
+                <div class="footer_main">
+                    <style>
+                        .footer_main a {
+                            text-decoration: none;
+                        }
+
+                        .footer_main {
+                            display: flex;
+                            width: 100%;
+                            box-shadow: 0px -3px 6px 0px rgba(128, 128, 128, 0.45);
+                        }
+                    </style>
+                    <div class="footer_box">
+                        <a href="home.html">
+                            <div class="footer_home">
+                                <img src="img/home_ico_1.png">
+                                <h3>ホーム</h3>
                                 <style text="type/css">
-                                    .guide_privacy {
-                                        border-radius: 5px;
-                                        border-color: rgb(156, 153, 151);
-                                        border-width: 3px;
-                                        border-style: solid;
-                                        margin: 0px auto 0px auto;
+                                    .footer_home {
+                                        height: 140px;
                                         text-align: center;
-                                        width: 40%;
+                                        margin: 0px;
                                     }
 
-                                    .guide_privacy h1 {
-                                        color: rgb(156, 153, 151);
-                                        font-size: 20px;
+                                    .footer_home img {
+                                        height: 105px;
+                                    }
+
+                                    .footer_home h3 {
                                         margin: 0px;
+                                        color: rgb(38, 181, 221);
                                     }
                                 </style>
                             </div>
                         </a>
-                        <style text="type/css">
-                            .infoend a {
-                                text-decoration: none;
-                            }
-
-                            .infoend {
-                                margin: 0px;
-                                height: 40px;
-                            }
-                        </style>
                     </div>
-                    <style>
-                        .infobody {
-                            background-color: rgb(215, 215, 215);
-                        }
-                    </style>
-                </div>
+                    <div class="footer_box">
+                        <a href="sales_status.html">
+                            <div class="footer_sales_status">
+                                <img src="img/search_stock_ico_2.png">
+                                <h3>販売状況確認</h3>
+                                <style text="type/css">
+                                    .footer_sales_status {
+                                        height: 140px;
+                                        text-align: center;
+                                        margin: auto;
+                                    }
 
-                <footer>
-                    <div class="reload">
-                        <a href="home.html"><img src="img/reload.png" class="img-reload"></a>
+                                    .footer_sales_status img {
+                                        height: 105px;
+                                    }
+
+                                    .footer_sales_status h3 {
+                                        margin: 0px;
+                                        color: rgb(156, 153, 151);
+                                    }
+                                </style>
+                            </div>
+                        </a>
                     </div>
-                    <div class="footer_main">
-                        <style>
-                            .footer_main a {
-                                text-decoration: none;
-                            }
+                    <div class="footer_box">
+                        <a href="classCM.html">
+                            <div class="footer_classCM">
+                                <img src="img/videoform_ico_2.png">
+                                <h3>クラスＣＭ</h3>
+                                <style text="type/css">
+                                    .footer_classCM {
+                                        height: 140px;
+                                        text-align: center;
+                                        margin: 0px;
+                                    }
 
-                            .footer_main {
-                                display: flex;
-                                width: 100%;
-                                box-shadow: 0px -3px 6px 0px rgba(128, 128, 128, 0.45);
-                            }
-                        </style>
-                        <div class="footer_box">
-                            <a href="home.html">
-                                <div class="footer_home">
-                                    <img src="img/home_ico_1.png">
-                                    <h3>ホーム</h3>
-                                    <style text="type/css">
-                                        .footer_home {
-                                            height: 140px;
-                                            text-align: center;
-                                            margin: 0px;
-                                        }
+                                    .footer_classCM img {
+                                        height: 105px;
+                                    }
 
-                                        .footer_home img {
-                                            height: 105px;
-                                        }
+                                    .footer_classCM h3 {
+                                        margin: 0px;
+                                        color: rgb(156, 153, 151);
+                                    }
+                                </style>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="footer_box">
+                        <a href="schedule.html">
+                            <div class="footer_schedule">
+                                <img src="img/schedule_ico_2.png">
+                                <h3>スケジュール</h3>
+                                <style text="type/css">
+                                    .footer_schedule {
+                                        height: 140px;
+                                        text-align: center;
+                                        margin: 0px;
+                                    }
 
-                                        .footer_home h3 {
-                                            margin: 0px;
-                                            color: rgb(38, 181, 221);
-                                        }
-                                    </style>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="footer_box">
-                            <a href="sales_status.html">
-                                <div class="footer_sales_status">
-                                    <img src="img/search_stock_ico_2.png">
-                                    <h3>販売状況確認</h3>
-                                    <style text="type/css">
-                                        .footer_sales_status {
-                                            height: 140px;
-                                            text-align: center;
-                                            margin: auto;
-                                        }
+                                    .footer_schedule img {
+                                        height: 105px;
+                                    }
 
-                                        .footer_sales_status img {
-                                            height: 105px;
-                                        }
+                                    .footer_schedule h3 {
+                                        margin: 0px;
+                                        color: rgb(156, 153, 151);
+                                    }
+                                </style>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="footer_box">
+                        <a href="notice.html">
+                            <div class="footer_notice">
+                                <img src="img/notice_ico_2.png">
+                                <h3>お知らせ</h3>
+                                <style text="type/css">
+                                    .footer_notice {
+                                        height: 140px;
+                                        text-align: center;
+                                        margin: 0px;
+                                    }
 
-                                        .footer_sales_status h3 {
-                                            margin: 0px;
-                                            color: rgb(156, 153, 151);
-                                        }
-                                    </style>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="footer_box">
-                            <a href="classCM.html">
-                                <div class="footer_classCM">
-                                    <img src="img/videoform_ico_2.png">
-                                    <h3>クラスＣＭ</h3>
-                                    <style text="type/css">
-                                        .footer_classCM {
-                                            height: 140px;
-                                            text-align: center;
-                                            margin: 0px;
-                                        }
+                                    .footer_notice img {
+                                        height: 105px;
+                                    }
 
-                                        .footer_classCM img {
-                                            height: 105px;
-                                        }
-
-                                        .footer_classCM h3 {
-                                            margin: 0px;
-                                            color: rgb(156, 153, 151);
-                                        }
-                                    </style>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="footer_box">
-                            <a href="schedule.html">
-                                <div class="footer_schedule">
-                                    <img src="img/schedule_ico_2.png">
-                                    <h3>スケジュール</h3>
-                                    <style text="type/css">
-                                        .footer_schedule {
-                                            height: 140px;
-                                            text-align: center;
-                                            margin: 0px;
-                                        }
-
-                                        .footer_schedule img {
-                                            height: 105px;
-                                        }
-
-                                        .footer_schedule h3 {
-                                            margin: 0px;
-                                            color: rgb(156, 153, 151);
-                                        }
-                                    </style>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="footer_box">
-                            <a href="https://webapp-system.github.io/stockn/notice.html">
-                                <div class="footer_notice">
-                                    <img src="img/notice_ico_2.png">
-                                    <h3>お知らせ</h3>
-                                    <style text="type/css">
-                                        .footer_notice {
-                                            height: 140px;
-                                            text-align: center;
-                                            margin: 0px;
-                                        }
-
-                                        .footer_notice img {
-                                            height: 105px;
-                                        }
-
-                                        .footer_notice h3 {
-                                            margin: 0px;
-                                            color: rgb(156, 153, 151);
-                                        }
-                                    </style>
-                                </div>
-                            </a>
-                        </div>
-                </footer>
+                                    .footer_notice h3 {
+                                        margin: 0px;
+                                        color: rgb(156, 153, 151);
+                                    }
+                                </style>
+                            </div>
+                        </a>
+                    </div>
+            </footer>
 
 </body>
 

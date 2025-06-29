@@ -81,7 +81,7 @@
                                     <font size="6">本ウェブアプリを使うにあたって</font>
                                 </h4>
                                 <div class="button_between"></div>
-                                <a href="https://webapp-system.github.io/stockn/useguide.html">
+                                <a href="https://naganonisi-hoso-r7-system.github.io/webapps-system/info/useguide.html">
                                     <div class="guide_box">
                                         <h2>
                                             <font size="7">使い方</font>
@@ -113,7 +113,7 @@
                                     </div>
                                 </a>
                                 <div class="button_between"></div>
-                                <a href="https://webapp-system.github.io/stockn/caution.html">
+                                <a href="https://naganonisi-hoso-r7-system.github.io/webapps-system /info/caution.html">
                                     <div class="caution_box">
                                         <h2>
                                             <font size="7">注意事項</font>
@@ -156,7 +156,7 @@
                                     <font size="6">その他</font>
                                 </h4>
                                 <div class="button_between"></div>
-                                <a href="https://webapp-system.github.io/stockn/info.html">
+                                <a href="https://naganonisi-hoso-r7-system.github.io/webapps-system /info/inquiry.html">
                                     <div class="info_box">
                                         <h2>
                                             <font size="7">お問い合わせ</font>
@@ -224,7 +224,7 @@
                         justify-content: center;
                         align-items: center;
                         z-index: 90;
-                        background-color: rgb(243, 239, 229);
+                        background-color: rgb(254, 252, 248);
                     }
 
                     .menu-btn span,
@@ -297,7 +297,7 @@
                         left: 100%;
                         /*leftの値を変更してメニューを画面外へ*/
                         z-index: 80;
-                        background-color: rgb(243, 239, 229);
+                        background-color: rgb(254, 252, 248);
                         transition: all 0.5s;
                         /*アニメーション設定*/
                         margin: 0;
@@ -331,6 +331,18 @@
                     margin: 5px auto;
                 }
 
+                .search-container input,
+                .search-container button,
+                #suggestions {
+                    font-size: 30px;
+                    /* ← 全体の文字サイズ（大きくしたいサイズに調整） */
+                }
+
+                /* プレースホルダー用のスタイル */
+                .search-container input::placeholder {
+                    font-size: 30px;
+                }
+
                 .search-container {
                     position: relative;
                     display: flex;
@@ -341,7 +353,7 @@
 
                 .search-container input {
                     width: 100%;
-                    height: 40px;
+                    height: 80px;
                     font-size: 16px;
                     padding: 0 10px;
                     box-sizing: border-box;
@@ -357,8 +369,9 @@
                     border-radius: 4px;
                     cursor: pointer;
                     transition: background-color 0.3s;
-                    height: 40px;
+                    height: 80px;
                     white-space: nowrap;
+                    width: 130px;
                 }
 
                 #suggestions {
@@ -387,10 +400,65 @@
 
             <script>
                 const items = [
-                    { name: "林檎", reading: "りんご", url: "https://www.tokyodisneyresort.jp/" },
-                    { name: "みかん", reading: "みかん", url: "0002.html" },
-                    { name: "バナナ", reading: "ばなな", url: "0003.html" },
-                    { name: "葡萄", reading: "ぶどう", url: "0004.html" }
+                    { name: "トルネードポテト", reading: "とるねーどぽてと", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/01.html" },
+                    { name: "チュロス（シュガー）", reading: "ちゅろすしゅがー", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/02.html" },
+                    { name: "チーズバーガー", reading: "ちーずばーがー", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/03.html" },
+                    { name: "ハンバーガー", reading: "はんばーがー", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/04.html" },
+                    { name: "サンドイッチ（甘ロール入り）", reading: "さんどいっちあまろーるいり", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/70.html" },
+                    { name: "サンドイッチ（３種）", reading: "さんどいっちさんしゅ", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/71.html" },
+                    { name: "サンドイッチ（４種）", reading: "さんどいっちよんしゅ", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/72.html" },
+                    { name: "フルーツ飴（いちご）", reading: "ふるーつあめいちご", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/05.html" },
+                    { name: "フルーツ飴（ぶどう）", reading: "ふるーつあめぶどう", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/06.html" },
+                    { name: "フルーツ飴（りんご）", reading: "ふるーつあめりんご", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/07.html" },
+                    { name: "フルーツ飴（みかん）", reading: "ふるーつあめみかん", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/08.html" },
+                    { name: "ヤンニョムチキン", reading: "やんにょむちきん", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/09.html" },
+                    { name: "チーズボール（クリームチーズ）", reading: "ちーずぼーるくりーむちーず", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/10.html" },
+                    { name: "チーズボール（スイートポテト）", reading: "ちーずぼーるすいーとぽてと", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/11.html" },
+                    { name: "ディッピンドッツアイスクリーム（ストロベリーチーズケーキ）", reading: "でぃっぴんどっつあいすくりーむすとろべりーちーずけーき", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/12.html" },
+                    { name: "ディッピンドッツアイスクリーム（レインボー）", reading: "でぃっぴんどっつあいすくりーむすれいんぼー", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/13.html" },
+                    { name: "ディッピンドッツアイスクリーム（ハニーコットンキャンディ）", reading: "でぃっぴんどっつあいすくりーむすはにーこっとんきゃんでぃー", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/14.html" },
+                    { name: "ディッピンドッツアイスクリーム（クッキー＆クリーム）", reading: "でぃっぴんどっつあいすくりーむくっきーあんどくりーむ", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/15.html" },
+                    { name: "ピザ（マルゲリータ）", reading: "ぴざまるげりーた", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/16.html" },
+                    { name: "ピザ（照り焼きチキン）", reading: "ぴざてりやきちきん", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/17.html" },
+                    { name: "ピザ（ペパロニ）", reading: "ぴざぺぱろに", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/18.html" },
+                    { name: "焼きそば", reading: "やきそば", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/19.html" },
+                    { name: "たこ焼き", reading: "たこやき", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/20.html" },
+                    { name: "ケバブ", reading: "けばぶ", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/21.html" },
+                    { name: "冷やしパイン", reading: "ひやしぱいん", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/22.html" },
+                    { name: "きゅうりの一本漬け", reading: "きゅうりのいっぽんづけ", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/23.html" },
+                    { name: "ドーナツ（ドーナツホップ）", reading: "どーなつどーなつほっぷ", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/24.html" },
+                    { name: "ドーナツ（ポンデリング×オールドファッション）", reading: "どーなつぽんでりんぐおーるどふぁっしょん", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/25.html" },
+                    { name: "ドーナツ（ポンデリング×エンゼルフレンチ）", reading: "どーなつぽんでりんぐえんぜるふれんち", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/26.html" },
+                    { name: "冷凍チョコバナナ", reading: "れいとうちょこばなな", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/27.html" },
+                    { name: "タピオカ（ミルクティー）", reading: "たぴおかみるくてぃー", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/28.html" },
+                    { name: "タピオカ（抹茶）", reading: "たぴおかまっちゃ", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/29.html" },
+                    { name: "タピオカ（マンゴー）", reading: "たぴおかまんごー", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/30.html" },
+                    { name: "メロンパン（プレーン）", reading: "めろんぱんぷれーん", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/31.html" },
+                    { name: "メロンパン（ビター）", reading: "めろんぱんびたー", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/32.html" },
+                    { name: "メロンパン（黄金の塩）", reading: "めろんぱんおうごんのしお", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/33.html" },
+                    { name: "メロンパン（抹茶）", reading: "めろんぱんまっちゃ", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/34.html" },
+                    { name: "おにぎり＆鶏皮セット（さけ）", reading: "おにぎりあんどとりかわせっとさけ", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/35.html" },
+                    { name: "おにぎり＆鶏皮セット（たらこ）", reading: "おにぎりあんどとりかわせっとたらこ", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/36.html" },
+                    { name: "おにぎり＆鶏皮セット（ツナ）", reading: "おにぎりあんどとりかわせっとつな", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/37.html" },
+                    { name: "おにぎり＆鶏皮セット（うめ）", reading: "おにぎりあんどとりかわせっとうめ", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/38.html" },
+                    { name: "おにぎり（さけ）", reading: "おにぎりさけ", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/39.html" },
+                    { name: "おにぎり（たらこ）", reading: "おにぎりたらこ", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/40.html" },
+                    { name: "おにぎり（ツナ）", reading: "おにぎりつな", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/41.html" },
+                    { name: "おにぎり（うめ）", reading: "おにぎりうめ", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/42.html" },
+                    { name: "パン（牛乳パン）", reading: "ぱんぎゅうにゅうぱん", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/43.html" },
+                    { name: "パン（肉球パン）", reading: "ぱんにくきゅうぱん", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/44.html" },
+                    { name: "パン（信州牛カレーパン）", reading: "ぱんしんしゅうぎゅうかれーぱん", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/45.html" },
+                    { name: "パン（和風ガーリックフランス）", reading: "ぱんわふうがーりっくふらんす", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/46.html" },
+                    { name: "ミサンガ", reading: "みさんが", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/47.html" },
+                    { name: "ビーズストラップ", reading: "びーずすとらっぷ", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/48.html" },
+                    { name: "シュシュ", reading: "しゅしゅ", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/49.html" },
+                    { name: "ヘアゴム", reading: "へあごむ", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/50.html" },
+                    { name: "リボンストラップ", reading: "りぼんすとらっぷ", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/51.html" },
+                    { name: "フェアトレードクッキー", reading: "ふぇあとれーどくっきー", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/52.html" },
+                    { name: "ベジート", reading: "べじーと", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/991.html" },
+                    { name: "ソルガムドーナツ", reading: "そるがむどーなつ", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/53.html" },
+                    { name: "竹紙バック（今年度／昨年度）", reading: "たけしばっくこんねんどさくねんど", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/992.html" },
+                    { name: "竹紙ノート", reading: "たけしのーと", url: "https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/993.html" },
                 ];
 
                 function toHiragana(str) {
@@ -452,13 +520,915 @@
 
 
     </header>
-    <h1>　<br> </h1>
+    <h1>　<br>　</h1>
+    <div class="groupname">
+        <h1>３年１組</h1>
+        <style>
+            .groupname h1 {
+                color: rgb(38, 181, 221);
+                margin: 20px 0px 0px 10px;
+            }
+        </style>
+    </div>
 
-    <div class="item" onclick="toggleDetails(this)">
-        <h2>３年１組</h2>
-        <h1>トルネードポテト</h1>
-        <div class="details">
-            <iframe src="search_stock/01.html" width="600" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+    <div class="list-container">
+        <div class="Llist">
+            <a href="https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/01.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>３年１組</h2>
+                        <h1>トルネードポテト</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="Rlist">
+            <a href="shttps://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/02.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>３年１組</h2>
+                        <h1>チュロス</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="groupname">
+        <h1>３年２組</h1>
+        <style>
+            .groupname h1 {
+                color: rgb(38, 181, 221);
+                margin: 20px 0px 0px 10px;
+            }
+        </style>
+    </div>
+
+    <div class="list-container">
+        <div class="Llist">
+            <a href="https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/03.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>３年２組</h2>
+                        <h1>チーズバーガー</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="Rlist">
+            <a href="shttps://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/04.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>３年２組</h2>
+                        <h1>ハンバーガー</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="list-container">
+        <div class="Llist">
+            <a href="https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/70.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>３年２組</h2>
+                        <h1>サンドイッチ（甘ロール入り）</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="Rlist">
+            <a href="shttps://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/71.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>３年２組</h2>
+                        <h1>サンドイッチ（３種）</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="list-container">
+        <div class="Llist">
+            <a href="https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/72.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>３年２組</h2>
+                        <h1>サンドイッチ（４種）</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="Rlist">
+        </div>
+    </div>
+
+    <div class="groupname">
+        <h1>３年３組</h1>
+        <style>
+            .groupname h1 {
+                color: rgb(38, 181, 221);
+                margin: 20px 0px 0px 10px;
+            }
+        </style>
+    </div>
+
+    <div class="list-container">
+        <div class="Llist">
+            <a href="shttps://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/05.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>３年３組</h2>
+                        <h1>フルーツ飴（いちご）</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="Rlist">
+            <a href="https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/06.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>３年３組</h2>
+                        <h1>フルーツ飴（ぶどう）</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="list-container">
+        <div class="Llist">
+            <a href="shttps://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/07.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>３年３組</h2>
+                        <h1>フルーツ飴（りんご）</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="Rlist">
+            <a href="https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/08.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>３年３組</h2>
+                        <h1>フルーツ飴（みかん）</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="groupname">
+        <h1>３年４組</h1>
+        <style>
+            .groupname h1 {
+                color: rgb(38, 181, 221);
+                margin: 20px 0px 0px 10px;
+            }
+        </style>
+    </div>
+
+    <div class="list-container">
+        <div class="Llist">
+            <a href="shttps://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/09.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>３年４組</h2>
+                        <h1>ヤンニョムチキン</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="Rlist">
+            <a href="https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/10.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>３年４組</h2>
+                        <h1>チーズボール（クリームチーズ）</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="list-container">
+        <div class="Llist">
+            <a href="shttps://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/11.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>３年４組</h2>
+                        <h1>チーズボール（スイートポテト）</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="Rlist">
+        </div>
+    </div>
+
+    <div class="groupname">
+        <h1>３年５組</h1>
+        <style>
+            .groupname h1 {
+                color: rgb(38, 181, 221);
+                margin: 20px 0px 0px 10px;
+            }
+        </style>
+    </div>
+
+    <div class="list-container">
+        <div class="Llist">
+            <a href="https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/12.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>３年５組</h2>
+                        <h1>ディッピンドッツアイスクリーム（ストロベリーチーズケーキ）</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="Rlist">
+            <a href="shttps://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/13.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>３年５組</h2>
+                        <h1>ディッピンドッツアイスクリーム（レインボー）<br>　</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="list-container">
+        <div class="Llist">
+            <a href="https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/14.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>３年５組</h2>
+                        <h1>ディッピンドッツアイスクリーム（ハニーコットンキャンディ）</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="Rlist">
+            <a href="shttps://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/15.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>３年５組</h2>
+                        <h1>ディッピンドッツアイスクリーム（クッキー＆クリーム）<br>　</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="groupname">
+        <h1>３年６組</h1>
+        <style>
+            .groupname h1 {
+                color: rgb(38, 181, 221);
+                margin: 20px 0px 0px 10px;
+            }
+        </style>
+    </div>
+
+    <div class="list-container">
+        <div class="Llist">
+            <a href="https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/16.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>３年６組</h2>
+                        <h1>ピザ（マルゲリータ）</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="Rlist">
+            <a href="shttps://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/17.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>３年６組</h2>
+                        <h1>ピザ（照り焼きチキン）</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="list-container">
+        <div class="Llist">
+            <a href="https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/18.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>３年６組</h2>
+                        <h1>ピザ（ペパロニ）</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="Rlist">
+        </div>
+    </div>
+
+    <div class="groupname">
+        <h1>サッカー班</h1>
+        <style>
+            .groupname h1 {
+                color: rgb(38, 181, 221);
+                margin: 20px 0px 0px 10px;
+            }
+        </style>
+    </div>
+
+    <div class="list-container">
+        <div class="Llist">
+            <a href="shttps://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/19.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>サッカー班</h2>
+                        <h1>焼きそば</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="Rlist">
+            <a href="https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/20.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>サッカー班</h2>
+                        <h1>たこ焼き</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="groupname">
+        <h1>陸上班</h1>
+        <style>
+            .groupname h1 {
+                color: rgb(38, 181, 221);
+                margin: 20px 0px 0px 10px;
+            }
+        </style>
+    </div>
+
+    <div class="list-container">
+        <div class="Llist">
+            <a href="shttps://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/21.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>陸上班</h2>
+                        <h1>ケバブ</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="Rlist">
+        </div>
+    </div>
+
+    <div class="groupname">
+        <h1>弓道班</h1>
+        <style>
+            .groupname h1 {
+                color: rgb(38, 181, 221);
+                margin: 20px 0px 0px 10px;
+            }
+        </style>
+    </div>
+
+    <div class="list-container">
+        <div class="Llist">
+            <a href="https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/22.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>弓道班</h2>
+                        <h1>冷やしパイン</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="Rlist">
+            <a href="shttps://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/23.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>弓道班</h2>
+                        <h1>きゅうりの一本漬け</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="groupname">
+        <h1>ソフトテニス班</h1>
+        <style>
+            .groupname h1 {
+                color: rgb(38, 181, 221);
+                margin: 20px 0px 0px 10px;
+            }
+        </style>
+    </div>
+
+    <div class="list-container">
+        <div class="Llist">
+            <a href="https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/24.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>ソフトテニス班</h2>
+                        <h1>ドーナツ（ドーナツホップ）<br>　</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="Rlist">
+            <a href="shttps://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/25.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>ソフトテニス班</h2>
+                        <h1>ドーナツ（ポンデリング×オールドファッション）</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="list-container">
+        <div class="Llist">
+            <a href="https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/26.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>ソフトテニス班</h2>
+                        <h1>ドーナツ（ポンデリング×オールドファッション）</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="Rlist">
+        </div>
+    </div>
+
+    <div class="groupname">
+        <h1>女子バレーボール班</h1>
+        <style>
+            .groupname h1 {
+                color: rgb(38, 181, 221);
+                margin: 20px 0px 0px 10px;
+            }
+        </style>
+    </div>
+
+    <div class="list-container">
+        <div class="Llist">
+            <a href="shttps://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/27.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>女子バレーボール班</h2>
+                        <h1>冷凍チョコバナナ</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="Rlist">
+        </div>
+    </div>
+
+    <div class="groupname">
+        <h1>女子バスケットボール班</h1>
+        <style>
+            .groupname h1 {
+                color: rgb(38, 181, 221);
+                margin: 20px 0px 0px 10px;
+            }
+        </style>
+    </div>
+
+    <div class="list-container">
+        <div class="Llist">
+            <a href="https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/28.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>女子バスケットボール班</h2>
+                        <h1>タピオカ（ミルクティー）</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="Rlist">
+            <a href="shttps://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/29.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>女子バスケットボール班</h2>
+                        <h1>タピオカ（抹茶）</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="list-container">
+        <div class="Llist">
+            <a href="https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/30.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>女子バスケットボール班</h2>
+                        <h1>タピオカ（マンゴー）</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="Rlist">
+        </div>
+    </div>
+
+    <div class="groupname">
+        <h1>卓球班</h1>
+        <style>
+            .groupname h1 {
+                color: rgb(38, 181, 221);
+                margin: 20px 0px 0px 10px;
+            }
+        </style>
+    </div>
+
+    <div class="list-container">
+        <div class="Llist">
+            <a href="https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/31.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>卓球班</h2>
+                        <h1>メロンパン（プレーン）</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="Rlist">
+            <a href="shttps://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/32.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>卓球班</h2>
+                        <h1>メロンパン（ビター）</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="list-container">
+        <div class="Llist">
+            <a href="https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/33.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>卓球班</h2>
+                        <h1>メロンパン（黄金の塩）</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="Rlist">
+            <a href="shttps://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/34.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>卓球班</h2>
+                        <h1>メロンパン（抹茶）</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="groupname">
+        <h1>バドミントン班</h1>
+        <style>
+            .groupname h1 {
+                color: rgb(38, 181, 221);
+                margin: 20px 0px 0px 10px;
+            }
+        </style>
+    </div>
+
+    <div class="list-container">
+        <div class="Llist">
+            <a href="https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/35.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>バドミントン班</h2>
+                        <h1>おにぎり＆鶏皮セット（さけ）<br>　</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="Rlist">
+            <a href="shttps://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/36.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>バドミントン班</h2>
+                        <h1>おにぎり＆鶏皮セット（たらこ）</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="list-container">
+        <div class="Llist">
+            <a href="https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/37.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>バドミントン班</h2>
+                        <h1>おにぎり＆鶏皮セット（ツナ）</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="Rlist">
+            <a href="shttps://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/38.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>バドミントン班</h2>
+                        <h1>おにぎり＆鶏皮セット（うめ）</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="list-container">
+        <div class="Llist">
+            <a href="https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/39.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>バドミントン班</h2>
+                        <h1>おにぎり（さけ）</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="Rlist">
+            <a href="shttps://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/40.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>バドミントン班</h2>
+                        <h1>おにぎり（たらこ）</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="list-container">
+        <div class="Llist">
+            <a href="https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/41.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>バドミントン班</h2>
+                        <h1>おにぎり（ツナ）</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="Rlist">
+            <a href="shttps://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/42.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>バドミントン班</h2>
+                        <h1>おにぎり（うめ）</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="list-container">
+        <div class="Llist">
+            <a href="https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/43.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>バドミントン班</h2>
+                        <h1>パン（牛乳パン）</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="Rlist">
+            <a href="shttps://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/44.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>バドミントン班</h2>
+                        <h1>パン（肉球パン）</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="list-container">
+        <div class="Llist">
+            <a href="https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/45.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>バドミントン班</h2>
+                        <h1>パン（信州牛カレーパン）<br>　</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="Rlist">
+            <a href="shttps://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/46.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>バドミントン班</h2>
+                        <h1>パン（和風ガーリックフランス）</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="groupname">
+        <h1>ライフスタイル班</h1>
+        <style>
+            .groupname h1 {
+                color: rgb(38, 181, 221);
+                margin: 20px 0px 0px 10px;
+            }
+        </style>
+    </div>
+
+    <div class="list-container">
+        <div class="Llist">
+            <a href="https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/47.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>ライフスタイル班</h2>
+                        <h1>ミサンガ</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="Rlist">
+            <a href="shttps://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/48.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>ライフスタイル班</h2>
+                        <h1>ビーズストラップ</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="list-container">
+        <div class="Llist">
+            <a href="https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/49.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>ライフスタイル班</h2>
+                        <h1>シュシュ</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="Rlist">
+            <a href="shttps://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/50.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>ライフスタイル班</h2>
+                        <h1>ヘアゴム</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="list-container">
+        <div class="Llist">
+            <a href="https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/51.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>ライフスタイル班</h2>
+                        <h1>リボンストラップ</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="Rlist">
+        </div>
+    </div>
+
+    <div class="groupname">
+        <h1>ＳＤＧｓ係</h1>
+        <style>
+            .groupname h1 {
+                color: rgb(38, 181, 221);
+                margin: 20px 0px 0px 10px;
+            }
+        </style>
+    </div>
+
+    <div class="list-container">
+        <div class="Llist">
+            <a href="https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/52.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>ＳＤＧｓ係</h2>
+                        <h1>フェアトレードクッキー</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="Rlist">
+            <a href="shttps://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/991.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>ＳＤＧｓ係</h2>
+                        <h1>ベジート</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="list-container">
+        <div class="Llist">
+            <a href="https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/53.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>ＳＤＧｓ係</h2>
+                        <h1>ソルガムドーナツ</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="Rlist">
+            <a href="shttps://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/992.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>ＳＤＧｓ係</h2>
+                        <h1>竹紙バック（今年度／昨年度）</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="list-container">
+        <div class="Llist">
+            <a href="https://naganonisi-hoso-r7-system.github.io/webapps-system/searchstock/993.html">
+                <div class="listblock" id="makeImg">
+                    <div class="listtext">
+                        <h2>ＳＤＧｓ係</h2>
+                        <h1>竹紙ノート</h1>
+                        <div class="listblock_last" id="makeImg"></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="Rlist">
         </div>
     </div>
 
@@ -505,6 +1475,16 @@
             details.classList.toggle('open');
         }
     </script>
+
+    <div class="pageend">
+        <style type="text/css">
+            .pageend {
+                margin: auto;
+                width: 100%;
+                height: 320px;
+            }
+        </style>
+    </div>
 
     <footer>
         <div class="reload">
@@ -619,7 +1599,7 @@
                 </a>
             </div>
             <div class="footer_box">
-                <a href="https://webapp-system.github.io/stockn/notice.html">
+                <a href="notice.html">
                     <div class="footer_notice">
                         <img src="img/notice_ico_2.png">
                         <h3>お知らせ</h3>
