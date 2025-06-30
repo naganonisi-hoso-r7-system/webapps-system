@@ -224,7 +224,7 @@
                         justify-content: center;
                         align-items: center;
                         z-index: 90;
-                        background-color: rgb(243, 239, 229);
+                        background-color: rgb(254, 252, 248);
                     }
 
                     .menu-btn span,
@@ -297,7 +297,7 @@
                         left: 100%;
                         /*leftの値を変更してメニューを画面外へ*/
                         z-index: 80;
-                        background-color: rgb(243, 239, 229);
+                        background-color: rgb(254, 252, 248);
                         transition: all 0.5s;
                         /*アニメーション設定*/
                         margin: 0;
@@ -381,7 +381,7 @@
             </style>
         </div>
         <div class="buy_place_place">
-            <h1>３年２組</h1>
+            <h1>３年２組（２５番教室）</h1>
             <style type="text/css">
                 .buy_place_place h1 {
                     margin: 10px 0px 0px 0px;
@@ -407,7 +407,7 @@
         <div class="buy_stock_now">
             <h1 id="data-sheet1">Loading…</h1>
             <script>
-                fetch('https://script.google.com/macros/s/AKfycbwpgH2L08EIGCLFsUnPw4O0uR2UE5T5k-APOr-nCryoxubh7jaKGDNN1rUBfqra903F/exec')
+                fetch('https://script.google.com/macros/s/AKfycbwpgH2L08EIGCLFsUnPw4O0uR2UE5T5k-APOr-nCryoxubh7jaKGDNN1rUBfqra903F/exe')
                     .then(response => response.text())
                     .then(data => {
                         document.getElementById('data-sheet1').innerText = data;
@@ -469,6 +469,16 @@
             .caution p {
                 margin: 40px 10px 10px 10px;
                 font-size: 12px;
+            }
+        </style>
+    </div>
+
+    <div class="pageend">
+        <style type="text/css">
+            .pageend {
+                margin: auto;
+                width: 100%;
+                height: 320px;
             }
         </style>
     </div>
