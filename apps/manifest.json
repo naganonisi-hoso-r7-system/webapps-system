@@ -1,6 +1,6 @@
 {
-    "name": "PWA Sample",
-    "short_name": "PWA",
+    "name": "梶の葉Webapps",
+    "short_name": "梶の葉Webapps",
     "background_color": "#fc980c",
     "icons": [{
         "src": "./icon-256.png",
